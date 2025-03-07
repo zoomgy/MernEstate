@@ -1,5 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
+import userRouter from "./routes/user.route.js";
+import authRouter from "./routes/auth.route.js";
 
 const app = express();
 (async function () {
@@ -16,3 +18,6 @@ const app = express();
 app.listen(3000, () => {
   console.log("Server Running on Port 3000");
 });
+app.use(express.json());
+app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
