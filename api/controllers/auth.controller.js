@@ -13,7 +13,7 @@ const signUpContoller = async (req, res, next) => {
       status: "User Created Successfully",
     });
   } catch (error) {
-    next(error);
+    next(error, req, res);
   }
 };
 
